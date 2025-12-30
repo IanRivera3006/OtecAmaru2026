@@ -1,0 +1,464 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+  background: #f5f7fa;
+  color: #222;
+}
+
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgb(2, 78, 100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+}
+
+
+.logo img {
+  height: 45px;
+}
+
+
+nav a {
+  color: white;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(2,78,100,.8), rgba(2,78,100,.8));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px;
+}
+
+
+.hero-content h1 {
+  color: white;
+  font-size: 3rem;
+}
+
+
+.hero-content p {
+  color: #e0f2f1;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+
+/* SECTIONS */
+.section {
+  padding: 100px 40px;
+}
+
+
+.light {
+  background: white;
+}
+
+
+.dark {
+  background: rgb(2, 78, 100);
+  color: white;
+}
+
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+
+.container h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+
+/* STATS */
+/* ===== COMMUNITY / STATS MEJORADO ===== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+
+.stats div {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: 35px 20px;
+  border-radius: 15px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+
+.stats div:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+
+.stats h3 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+
+.stats p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+
+
+
+/* CONTACT */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+
+.contact-icons a {
+  color: inherit;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+
+.contact-icons i {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+/* FOOTER */
+footer {
+  background: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 20px;
+}
+
+
+/* ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =========================
+   HERO CARRUSEL DE FONDO
+   ========================= */
+
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+
+/* Capa del carrusel */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  animation: heroCarousel 15s infinite;
+  z-index: 1;
+}
+
+
+/* Oscurecer para que el texto se lea bien */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 78, 100, 0.65);
+  z-index: 2;
+}
+
+
+/* Contenido arriba del fondo */
+.hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+
+/* Animación */
+@keyframes heroCarousel {
+  0% {
+    background-image: url("../img/hero1.jpg");
+  }
+  33% {
+    background-image: url("../img/hero2.jpg");
+  }
+  66% {
+    background-image: url("../img/hero3.jpg");
+  }
+  100% {
+    background-image: url("../img/hero1.jpg");
+  }
+}
+
+
+/* ===== CÓMO TRABAJAMOS ===== */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+
+.work-item i {
+  font-size: 40px;
+  color: #024E64;
+  margin-bottom: 15px;
+}
+
+
+.work-item h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+
+/* ===== CURSOS ===== */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+
+.course-card {
+  background: #fff;
+  color: #024E64;
+  width: 350px;
+  padding: 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+
+/* ===== QUIÉNES SOMOS (MEJORADO) ===== */
+.about-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  margin-top: 60px;
+}
+
+
+.about-row img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+
+.about-row p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  text-align: left;
+}
+
+
+/* segunda fila con efecto alternado */
+.about-row.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-row,
+  .about-row.reverse {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+
+  .about-row p {
+    text-align: center;
+  }
+}
+
+
+/* ===== QUIÉNES SOMOS – EFECTOS ===== */
+.about-text {
+  padding: 20px;
+  transition: all 0.4s ease;
+  border-radius: 10px;
+}
+
+
+.about-row:hover .about-text {
+  background: rgba(2, 78, 100, 0.75);
+  color: white;
+}
+
+
+.about-row img {
+  transition: all 0.4s ease;
+}
+
+
+.about-row:hover img {
+  border: 4px solid white;
+}
+
+
+/* ===== CURSOS CON IMAGEN ===== */
+.course-card img {
+  width: 300px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* =========================
+   CARRUSEL INFINITO LIMPIO
+========================= */
+
+.courses-wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.courses-grid.carousel {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: cursosLoop 35s linear infinite;
+}
+
+.courses-grid.carousel:hover {
+  animation-play-state: paused;
+}
+
+/* animación continua sin cortes */
+@keyframes cursosLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .courses-grid.carousel {
+    animation-duration: 50s;
+  }
+}
+
+
+    .contacto {
+      background: #1c1c1c;
+      color: #ffffff;
+      padding: 60px 20px;
+      font-family: Arial, sans-serif;
+    }
+
+
+    .contacto-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+
+    .contacto-box h3 {
+      font-size: 14px;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+
+    .contacto-box p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #dcdcdc;
+    }
+
+
+    .contacto-iconos {
+      display: flex;
+      gap: 20px;
+    }
+
+
+    .contacto-iconos a {
+      font-size: 26px;
+      color: #ffffff;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+
+    .contacto-iconos a:hover {
+      color: #25d366;
+      transform: scale(1.15);
+    }
